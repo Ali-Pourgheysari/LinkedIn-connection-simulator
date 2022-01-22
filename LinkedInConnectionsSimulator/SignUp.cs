@@ -31,9 +31,9 @@ namespace LinkedInConnectionsSimulator
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            HomePage H = new HomePage();
-            H.Show();
-            this.Hide();
+            //HomePage H = new HomePage();
+            //H.Show();
+            //this.Hide();
         }
     }
 }

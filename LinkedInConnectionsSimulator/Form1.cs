@@ -34,7 +34,7 @@ namespace LinkedInConnectionsSimulator
             {
                 if (Entity.ContainsKey(Convert.ToInt32(txtid.Text)) && Entity[Convert.ToInt32(txtid.Text)].name == txtName.Text)
                 {
-                    HomePage H = new HomePage();
+                    HomePage H = new HomePage(Entity, Convert.ToInt32(txtid.Text));
                     H.Show();
                     this.Hide();
                 }
