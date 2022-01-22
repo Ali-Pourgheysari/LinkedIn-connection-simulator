@@ -9,31 +9,25 @@ using System.Windows.Forms;
 
 namespace LinkedInConnectionsSimulator
 {
-    class ReadJson
+    public static class ReadJson
     {
-        Dictionary<int, Informations> people = new Dictionary<int, Informations>();
-
-        void readJson()
+        static public Dictionary<int, Informations> readJsonfile()
         {
-            string path = Application.StartupPath.Remove(Application.StartupPath.Length - 38) + "users.txt";
+            Dictionary<int, Informations> Entity = new Dictionary<int, Informations>();
+
+            string path = Application.StartupPath.Remove(Application.StartupPath.Length - 38) + "users.json";
             using (StreamReader r = new StreamReader(path))
             {
                 string json = r.ReadToEnd();
                 List<Informations> items = JsonConvert.DeserializeObject<List<Informations>>(json);
+                int counter = 1;
+                foreach (var item in items)
+                {
+                    Entity.Add(counter++, item);
+                }
             }
-            
+            return Entity;
         }
-
-    }
-
-    public class Informations
-    {
-        public string name { get; set; }
-        public string dateOfBirth { get; set; }
-        public string universityLocation { get; set; }
-        public string field { get; set; }
-        public string workPlace { get; set; }
-        public string[] specialties { get; set; }
-        public string[] connectionId { get; set; }
     }
 }
+

@@ -31,11 +31,13 @@ namespace LinkedInConnectionsSimulator
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.linkSignUp = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,27 +61,27 @@ namespace LinkedInConnectionsSimulator
             this.label2.TabIndex = 1;
             this.label2.Text = "Login";
             // 
-            // txtName
+            // txtid
             // 
-            this.txtName.Font = new System.Drawing.Font("Arial Nova Cond", 18F);
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtName.Location = new System.Drawing.Point(29, 162);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(260, 37);
-            this.txtName.TabIndex = 2;
-            this.txtName.Tag = "";
+            this.txtid.Font = new System.Drawing.Font("Arial Nova Cond", 18F);
+            this.txtid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtid.Location = new System.Drawing.Point(29, 156);
+            this.txtid.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(260, 37);
+            this.txtid.TabIndex = 2;
+            this.txtid.Tag = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("David", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(26, 146);
+            this.label3.Location = new System.Drawing.Point(26, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 15);
+            this.label3.Size = new System.Drawing.Size(29, 15);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Name:";
+            this.label3.Text = "ID:";
             // 
             // btnLogin
             // 
@@ -90,7 +92,7 @@ namespace LinkedInConnectionsSimulator
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLogin.Font = new System.Drawing.Font("Arial Nova Cond", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(29, 212);
+            this.btnLogin.Location = new System.Drawing.Point(29, 263);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(260, 34);
             this.btnLogin.TabIndex = 3;
@@ -104,7 +106,7 @@ namespace LinkedInConnectionsSimulator
             this.linkSignUp.Font = new System.Drawing.Font("Arial Nova Cond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkSignUp.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkSignUp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(116)))), ((int)(((byte)(179)))));
-            this.linkSignUp.Location = new System.Drawing.Point(13, 265);
+            this.linkSignUp.Location = new System.Drawing.Point(8, 317);
             this.linkSignUp.Name = "linkSignUp";
             this.linkSignUp.Size = new System.Drawing.Size(226, 23);
             this.linkSignUp.TabIndex = 4;
@@ -123,15 +125,39 @@ namespace LinkedInConnectionsSimulator
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("David", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(26, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Name:";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Arial Nova Cond", 18F);
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtName.Location = new System.Drawing.Point(29, 213);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(260, 37);
+            this.txtName.TabIndex = 2;
+            this.txtName.Tag = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(316, 302);
+            this.ClientSize = new System.Drawing.Size(316, 349);
             this.Controls.Add(this.linkSignUp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtid);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -152,10 +178,12 @@ namespace LinkedInConnectionsSimulator
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel linkSignUp;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtName;
     }
 }
 
