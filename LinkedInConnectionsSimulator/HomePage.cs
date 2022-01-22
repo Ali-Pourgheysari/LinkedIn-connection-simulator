@@ -72,11 +72,11 @@ namespace LinkedInConnectionsSimulator
 
             foreach (var item in Entity[_key].Specialties)
             {
-                foreach (var mapkey in WeightMap.Keys)
+                foreach (var mapkey in WeightMap.Keys.ToList())
                 {
                     if (Entity[Convert.ToInt32(mapkey)].Specialties.Contains(item))
                     {
-                        WeightMap[mapkey] += 7;
+                        WeightMap[mapkey] += 15;
                     }
                 }
             }

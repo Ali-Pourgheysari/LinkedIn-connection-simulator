@@ -15,7 +15,7 @@ namespace LinkedInConnectionsSimulator
         {
             Dictionary<int, Informations> Entity = new Dictionary<int, Informations>();
 
-            string path = Application.StartupPath.Remove(Application.StartupPath.Length - 38) + "users.json";
+            string path = Application.StartupPath.Remove(Application.StartupPath.Length - 38) + "users2.json";
             using (StreamReader r = new StreamReader(path))
             {
                 string json = r.ReadToEnd();
