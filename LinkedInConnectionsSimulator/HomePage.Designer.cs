@@ -35,6 +35,7 @@ namespace LinkedInConnectionsSimulator
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameOfEachUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnFollow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +96,7 @@ namespace LinkedInConnectionsSimulator
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(116)))), ((int)(((byte)(179)))));
             this.button1.Font = new System.Drawing.Font("Arial Nova Cond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(12, 525);
+            this.button1.Location = new System.Drawing.Point(13, 525);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -103,11 +104,25 @@ namespace LinkedInConnectionsSimulator
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnFollow
+            // 
+            this.btnFollow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(116)))), ((int)(((byte)(179)))));
+            this.btnFollow.Font = new System.Drawing.Font("Arial Nova Cond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFollow.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnFollow.Location = new System.Drawing.Point(233, 525);
+            this.btnFollow.Name = "btnFollow";
+            this.btnFollow.Size = new System.Drawing.Size(75, 23);
+            this.btnFollow.TabIndex = 3;
+            this.btnFollow.Text = "Follow";
+            this.btnFollow.UseVisualStyleBackColor = false;
+            this.btnFollow.Click += new System.EventHandler(this.btnFollow_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 553);
+            this.Controls.Add(this.btnFollow);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -131,5 +146,6 @@ namespace LinkedInConnectionsSimulator
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameOfEachUser;
+        private System.Windows.Forms.Button btnFollow;
     }
 }

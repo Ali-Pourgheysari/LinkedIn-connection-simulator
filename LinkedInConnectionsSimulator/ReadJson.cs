@@ -11,11 +11,17 @@ namespace LinkedInConnectionsSimulator
 {
     public static class ReadJson
     {
+        private static string _inputfilename { get; set; }
+        static public void filename(string filename)
+        {
+            _inputfilename = filename;
+        }
+
         static public Dictionary<int, Informations> readJsonfile()
         {
             Dictionary<int, Informations> Entity = new Dictionary<int, Informations>();
 
-            string path = Application.StartupPath.Remove(Application.StartupPath.Length - 38) + "users2.json";
+            string path = Application.StartupPath.Remove(Application.StartupPath.Length - 38) + $"{_inputfilename}.json";
             using (StreamReader r = new StreamReader(path))
             {
                 string json = r.ReadToEnd();

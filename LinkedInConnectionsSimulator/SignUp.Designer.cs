@@ -47,6 +47,7 @@ namespace LinkedInConnectionsSimulator
             this.txtPlace = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,6 +257,17 @@ namespace LinkedInConnectionsSimulator
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("David", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(100, 319);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(163, 12);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "(Format:speciality1,specialitu2,...)";
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +282,7 @@ namespace LinkedInConnectionsSimulator
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtField);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtBirth);
@@ -311,5 +324,6 @@ namespace LinkedInConnectionsSimulator
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPlace;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

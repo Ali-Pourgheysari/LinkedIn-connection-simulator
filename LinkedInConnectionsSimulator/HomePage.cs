@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,17 @@ namespace LinkedInConnectionsSimulator
         Dictionary<int, Informations> Entity;
         Dictionary<int, int> WeightMap;
         private int _key;
+        private bool _newperson;
+        private string _inputfilename;
 
-        public HomePage(Dictionary<int, Informations> E, int key)
+        public HomePage(Dictionary<int, Informations> E, int key, bool newperson, string filename)
         {
             InitializeComponent();
             Entity = E;
             _key = key;
             WeightMap = new Dictionary<int, int>();
+            _newperson = newperson;
+            _inputfilename = filename;
         }
 
         public void CalcConnectionWeight(int weight, int key, List<string> passed)
@@ -63,12 +68,24 @@ namespace LinkedInConnectionsSimulator
 
         public void getTwentyConnections()
         {
-            List<string> passed = new List<string>();
-            foreach (var item in Entity[_key].ConnectionId)
+            if (!_newperson)
             {
-                passed.Add(item);
-                CalcConnectionWeight(5, Convert.ToInt32(item), passed);
+                List<string> passed = new List<string>();
+                foreach (var item in Entity[_key].ConnectionId)
+                {
+                    passed.Add(item);
+                    CalcConnectionWeight(5, Convert.ToInt32(item), passed);
+                }
             }
+            else
+            {
+                foreach (var item in Entity)
+                {
+                    WeightMap.Add(item.Key, 0);
+                }
+                WeightMap.Remove(Entity.Last().Key);
+            }
+            
 
             foreach (var item in Entity[_key].Specialties)
             {
@@ -83,13 +100,10 @@ namespace LinkedInConnectionsSimulator
 
             foreach (var mapkey in WeightMap.Keys.ToList())
             {
-                if (Entity[Convert.ToInt32(mapkey)].dateOfBirth.Contains(Entity[_key].dateOfBirth))
-                {
-                    WeightMap[mapkey] += 7;
-                }
+
                 if (Entity[Convert.ToInt32(mapkey)].field.Contains(Entity[_key].field))
                 {
-                    WeightMap[mapkey] += 5;
+                    WeightMap[mapkey] += 7;
                 }
                 if (Entity[Convert.ToInt32(mapkey)].universityLocation.Contains(Entity[_key].universityLocation))
                 {
@@ -126,5 +140,66 @@ namespace LinkedInConnectionsSimulator
             }
             dataGridView1.DataSource = FindalDic.ToList();
         }
+
+        private void btnFollow_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Please choose a person in the list to follow!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int SecondId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                if (Entity[SecondId].ConnectionId.Contains(_key.ToString()))
+                {
+                    MessageBox.Show("You have already followed this user!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Entity[SecondId].ConnectionId.Add(_key.ToString());
+                    if (Entity[_key].ConnectionId != null)
+                    {
+                        Entity[_key].ConnectionId.Add(SecondId.ToString());
+                    }
+                    else
+                    {
+                        List<string> connection = new List<string>();
+                        connection.Add(SecondId.ToString());
+                        Entity[_key].ConnectionId = connection;
+                    }
+
+                    List<outpoutinfo> jsonoutput = new List<outpoutinfo>();
+                    foreach (var item in Entity)
+                    {
+                        jsonoutput.Add( new outpoutinfo
+                        {
+                            id = item.Key,
+                            name = item.Value.name,
+                            dateOfBirth = item.Value.dateOfBirth,
+                            universityLocation = item.Value.universityLocation,
+                            field = item.Value.field,
+                            workPlace = item.Value.workPlace,
+                            Specialties = item.Value.Specialties,
+                            ConnectionId = item.Value.ConnectionId
+                        });
+                    }
+
+                    string path = Application.StartupPath.Remove(Application.StartupPath.Length - 38) + $"{_inputfilename}.json";
+                    string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonoutput, Newtonsoft.Json.Formatting.Indented);
+                    File.WriteAllText(path, output);
+
+                    MessageBox.Show($"You are following \"{Entity[SecondId].name}\"", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    HomePage h = new HomePage(Entity, _key, false, _inputfilename);
+                    this.Hide();
+                    h.Show();
+                }  
+            }
+        }
+    }
+
+    public class outpoutinfo : Informations
+    {
+        public int id { get; set; }
     }
 }

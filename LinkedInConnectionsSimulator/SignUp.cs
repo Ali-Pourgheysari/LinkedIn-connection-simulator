@@ -12,9 +12,14 @@ namespace LinkedInConnectionsSimulator
 {
     public partial class SignUp : Form
     {
-        public SignUp()
+        Dictionary<int, Informations> Entity = new Dictionary<int, Informations>();
+        private string _inputfilename;
+
+        public SignUp(Dictionary<int, Informations> E, string filename)
         {
             InitializeComponent();
+            Entity = E;
+            _inputfilename = filename;
         }
 
         private void SignUp_Load(object sender, EventArgs e)
@@ -31,9 +36,30 @@ namespace LinkedInConnectionsSimulator
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            //HomePage H = new HomePage();
-            //H.Show();
-            //this.Hide();
+            if (txtBirth.Text == "" || txtName.Text == "" || txtField.Text == "" || txtPlace.Text == "" || txtSpec.Text == "" || txtUniLoc.Text == "")
+            {
+                MessageBox.Show("All fields are required!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int PersonId = Entity.Keys.Last() + 1;
+                List<string> specialities = txtSpec.Text.Split(',').ToList();
+                Entity.Add(PersonId, new Informations
+                {
+                    name = txtName.Text,
+                    dateOfBirth = txtBirth.Text,
+                    field = txtField.Text,
+                    universityLocation = txtUniLoc.Text,
+                    workPlace = txtPlace.Text,
+                    Specialties = specialities
+                });
+                MessageBox.Show($"Your ID is: {PersonId}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HomePage H = new HomePage(Entity, PersonId, true, _inputfilename);
+                H.Show();
+                this.Hide();
+            }
+
+           
         }
     }
 }
