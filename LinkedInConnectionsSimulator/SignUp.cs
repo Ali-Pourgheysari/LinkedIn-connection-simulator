@@ -22,11 +22,6 @@ namespace LinkedInConnectionsSimulator
             _inputfilename = filename;
         }
 
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form1 f = new Form1();
