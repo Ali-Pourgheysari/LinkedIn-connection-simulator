@@ -12,6 +12,7 @@ namespace LinkedInConnectionsSimulator
     public static class ReadJson
     {
         private static string _inputfilename { get; set; }
+
         static public void filename(string filename)
         {
             _inputfilename = filename;
