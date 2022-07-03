@@ -10,34 +10,34 @@ this application is used to simulate a connection between people on LinkedIn. Yo
 * connection Id (the id of the person you are connected with)
 
 <p align="center">
-    <img src=".\screenshot\2 inter json file.png" width="200" higth="50" >
+    <img src=".\screenshot\2 inter json file.png" width="300">
 </p>
 
 ## Sign up
 You have to enter the information mentioned above to sign up. Then your Id number will be generated for you so you have to save it.
 
 <p align="center">
-    <img src=".\screenshot\3 sign up form.png" width="100" higth="250" >
+    <img src=".\screenshot\3 sign up form.png" width="250">
 </p>
 
 ## Login
 You have to enter your Id number and name to log in.
 
 <p align="center">
-    <img src=".\screenshot\1 login form.png" width="100" higth="150" >
+    <img src=".\screenshot\1 login form.png" width="250" >
 </p>
 
 ## Connection suggestions
 As soon as you log in, you will be able to see the suggestions of connections you can make. these connections are based on the information you entered before. Each piece of information has a weight that will be used to calculate the similarity between you and suggested connections.
 
 <p align="center">
-    <img src=".\screenshot\5 suggestions.png" width="100" higth="300" >
+    <img src=".\screenshot\5 suggestions.png" width="250" >
 </p>
 
 After you see the suggestions, you can click on the name of the person you want to connect with and by clicking on the button "Follow" you connect with the person then the list refreshes and you can see the new suggestions.
 
 <p align="center">
-    <img src=".\screenshot\6 connected.png" width="100" higth="300" >
+    <img src=".\screenshot\6 connected.png" width="250" >
 </p>
 
 <div dir="rtl" align='right'>
