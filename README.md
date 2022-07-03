@@ -1,3 +1,44 @@
+# LinkedIn Connection simulator
+this application is used to simulate a connection between people on LinkedIn. You give the application a JSON file as input that includes people registered in the LinkedIn before with their information like:
+* Id
+* name
+* date of birth
+* univesity location
+* field of study
+* workplace
+* specialties
+* connection Id (the id of the person you are connected with)
+
+<p align="center">
+    <img src=".\screenshot\2 inter json file.png" width="200" higth="50" >
+</p>
+
+## Sign up
+You have to enter your information mentioned above to sign up. Then your Id number will be generated for you so you have to save it.
+
+<p align="center">
+    <img src=".\screenshot\3 sign up form.png" width="100" higth="250" >
+</p>
+
+## Login
+You have to enter your Id number and name to login.
+
+<p align="center">
+    <img src=".\screenshot\1 login form.png" width="100" higth="150" >
+</p>
+
+## Connection suggestions
+As soon as you login, you will be able to see the suggestions of connections you can make. these connections are based on the information you entered before. Each information have a weight that will be used to calculate the similarity between you and suggested connections.
+
+<p align="center">
+    <img src=".\screenshot\5 suggestions.png" width="100" higth="300" >
+</p>
+
+After you see the suggestions, you can click on the name of the person you want to connect with and by clicking on the button "Follow" you connect with the person then the list refreshes and you can see the new suggestions.
+
+<p align="center">
+    <img src=".\screenshot\6 connected.png" width="800" higth="600" >
+</p>
 
 <div dir="rtl" align='right'>
 
@@ -5,15 +46,6 @@
   توضیحات کامل پروژه و راهنمایی پیاده سازی در فایل مستند پروژه در همین ریپوزیتوری قابل مشاهده هست.
 
 در کنار فایل مستند توضیحات پروژه یک فایل نمونه ورودی(users.json) به فرمت جی‌سان به شما داده شده است.
-
-### جی‌سان
-جی سان را می‌توان یک فرمت متنی ساده و سبک برای نگه داری و انتقال داده ها به صورت سازماندهی شده به شمار آورد که درک محتوای آن برای انسان کار آسانی است و علاوه بر این ماشین ها هم به آسانی قادر به ایجاد کردن و تجزیه آن هستند. در این فرمت، داده ها در قالب مجموعه‌ای از جفت‌های نام – مقدار و لیستی مرتب از مقادیر (معادل با آرایه ها) سازماندهی می‌شوند  
-  
-برای خواندن ورودی با فرمت جی‌سان میتوانید از لینک های زیر استفاده کنید. ( برای اطلاعات بیشتر حتما در مورد جی‌سان سرچ کنید.)
-
-+ [خواندن و نوشتن با فرمت جیسان در جاوا ](https://www.baeldung.com/jackson-object-mapper-tutorial)
-+ [خواندن و نوشتن با فرمت جیسان در پایتون ](https://www.geeksforgeeks.org/read-json-file-using-python/)
-+ [خواندن و نوشتن با فرمت جیسان در سی پلاس پلاس ](https://linuxhint.com/parse-json-data-cpp/)
 
   دقت کنید که این دیتاست ورودی داده شده تستی است و تعداد آن کم است. برای ارائه دیتاست بزرگتری که صحت و کیفیت برنامه شما چک شود، داده‌میشود.
   
