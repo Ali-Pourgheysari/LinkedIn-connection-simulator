@@ -1,9 +1,9 @@
 # LinkedIn Connection simulator
-this application is used to simulate a connection between people on LinkedIn. You give the application a JSON file as input that includes people registered in the LinkedIn before with their information like:
+this application is used to simulate a connection between people on LinkedIn. You give the application a JSON file as input that includes people registered on LinkedIn before with their information like:
 * Id
-* name
+* Name
 * date of birth
-* univesity location
+* university location
 * field of study
 * workplace
 * specialties
@@ -14,21 +14,21 @@ this application is used to simulate a connection between people on LinkedIn. Yo
 </p>
 
 ## Sign up
-You have to enter your information mentioned above to sign up. Then your Id number will be generated for you so you have to save it.
+You have to enter the information mentioned above to sign up. Then your Id number will be generated for you so you have to save it.
 
 <p align="center">
     <img src=".\screenshot\3 sign up form.png" width="100" higth="250" >
 </p>
 
 ## Login
-You have to enter your Id number and name to login.
+You have to enter your Id number and name to log in.
 
 <p align="center">
     <img src=".\screenshot\1 login form.png" width="100" higth="150" >
 </p>
 
 ## Connection suggestions
-As soon as you login, you will be able to see the suggestions of connections you can make. these connections are based on the information you entered before. Each information have a weight that will be used to calculate the similarity between you and suggested connections.
+As soon as you log in, you will be able to see the suggestions of connections you can make. these connections are based on the information you entered before. Each piece of information have a weight that will be used to calculate the similarity between you and suggested connections.
 
 <p align="center">
     <img src=".\screenshot\5 suggestions.png" width="100" higth="300" >
