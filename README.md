@@ -28,7 +28,7 @@ You have to enter your Id number and name to log in.
 </p>
 
 ## Connection suggestions
-As soon as you log in, you will be able to see the suggestions of connections you can make. these connections are based on the information you entered before. Each piece of information have a weight that will be used to calculate the similarity between you and suggested connections.
+As soon as you log in, you will be able to see the suggestions of connections you can make. these connections are based on the information you entered before. Each piece of information has a weight that will be used to calculate the similarity between you and suggested connections.
 
 <p align="center">
     <img src=".\screenshot\5 suggestions.png" width="100" higth="300" >
@@ -37,7 +37,7 @@ As soon as you log in, you will be able to see the suggestions of connections yo
 After you see the suggestions, you can click on the name of the person you want to connect with and by clicking on the button "Follow" you connect with the person then the list refreshes and you can see the new suggestions.
 
 <p align="center">
-    <img src=".\screenshot\6 connected.png" width="800" higth="600" >
+    <img src=".\screenshot\6 connected.png" width="100" higth="300" >
 </p>
 
 <div dir="rtl" align='right'>
